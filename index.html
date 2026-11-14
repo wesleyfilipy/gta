@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Sunset Queen ($QUEEN) — Rule the Neon Coast</title>
-<meta name="description" content="$QUEEN is the community memecoin of the neon coast, living on Robinhood Chain. Join the crew.">
+<title>Sunset Queen ($QUEEN) — The Hottest Ride on the Chain</title>
+<meta name="description" content="Neon nights. Gold crowns. A crew that never sleeps. $QUEEN is live on Robinhood Chain.">
 <meta name="theme-color" content="#0B0620">
 <meta property="og:title" content="Sunset Queen ($QUEEN)">
-<meta property="og:description" content="The queen of the neon coast just pulled up on Robinhood Chain. Join the crew.">
+<meta property="og:description" content="The hottest ride on the chain just pulled up. $QUEEN is live on Robinhood Chain.">
 <meta property="og:image" content="images/og.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -62,9 +62,12 @@ section{position:relative;padding:72px 0}
 .btn:active{transform:scale(.98)}
 .btn-primary{color:#1a0420;background:linear-gradient(90deg,var(--yellow),var(--orange) 45%,var(--pink));animation:pulse-pink 2.4s ease-in-out infinite}
 .btn-ghost{color:var(--cyan);border:2px solid var(--cyan);background:rgba(11,6,32,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);animation:pulse-cyan 2.4s ease-in-out infinite .6s}
+.btn-purple{color:#fff;border:2px solid var(--purple);background:rgba(123,47,247,.18);animation:pulse-purple 2.4s ease-in-out infinite 1.2s}
+.btn-xl{min-height:68px;padding:18px 44px;font-size:1.3rem}
 .btn svg{width:20px;height:20px;flex:none}
 @keyframes pulse-pink{0%,100%{box-shadow:0 0 12px rgba(255,46,136,.55),0 0 0 0 rgba(255,46,136,.45)}50%{box-shadow:0 0 30px rgba(255,46,136,.9),0 0 0 10px rgba(255,46,136,0)}}
 @keyframes pulse-cyan{0%,100%{box-shadow:0 0 10px rgba(0,229,255,.45),inset 0 0 8px rgba(0,229,255,.25)}50%{box-shadow:0 0 28px rgba(0,229,255,.85),inset 0 0 14px rgba(0,229,255,.45)}}
+@keyframes pulse-purple{0%,100%{box-shadow:0 0 10px rgba(123,47,247,.5)}50%{box-shadow:0 0 28px rgba(123,47,247,.95)}}
 
 /* ---------- Nav ---------- */
 .nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,backdrop-filter .3s,border-color .3s;border-bottom:1px solid transparent}
@@ -109,24 +112,25 @@ section{position:relative;padding:72px 0}
 .grid::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0B0620 0%,rgba(255,46,136,.35) 4%,transparent 30%,transparent 75%,#0B0620)}
 @keyframes grid-move{to{background-position:center 56px}}
 
-.hero-inner{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;padding-bottom:clamp(150px,22vh,220px)}
-.mascot{position:relative;width:min(74vw,340px);aspect-ratio:1;animation:float 5s ease-in-out infinite}
+.hero-inner{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;padding-bottom:clamp(150px,22vh,220px)}
+.mascot{position:relative;width:min(70vw,320px);aspect-ratio:1;animation:float 5s ease-in-out infinite}
 .mascot::before{content:"";position:absolute;inset:-14px;border-radius:50%;background:conic-gradient(from 0deg,var(--pink),var(--orange),var(--yellow),var(--cyan),var(--purple),var(--pink));
   filter:blur(18px);opacity:.75;animation:spin 8s linear infinite}
 .mascot img{position:relative;width:100%;height:100%;object-fit:cover;border-radius:50%;border:4px solid #fff3;box-shadow:0 0 0 3px var(--pink),0 0 40px rgba(255,46,136,.7)}
 @keyframes float{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-16px) rotate(1deg)}}
 @keyframes spin{to{transform:rotate(360deg)}}
-.badge-chain{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.5);
-  color:var(--cyan);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-.badge-chain i{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);animation:blink 1.4s steps(2) infinite}
-@keyframes blink{50%{opacity:.2}}
+.badge-live{display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border-radius:999px;background:rgba(255,46,136,.14);border:1px solid rgba(255,46,136,.7);
+  color:#fff;font-size:.78rem;font-weight:800;letter-spacing:.1em;animation:badge-pulse 1.6s ease-in-out infinite}
+@keyframes badge-pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,46,136,.6);transform:scale(1)}50%{box-shadow:0 0 0 10px rgba(255,46,136,0),0 0 22px rgba(255,46,136,.6);transform:scale(1.04)}}
 .title{font-family:var(--display);font-weight:400;font-size:clamp(2.6rem,13vw,6.2rem);line-height:.95;
   background:linear-gradient(180deg,#fff 0%,#ffe36b 35%,var(--orange) 60%,var(--pink) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
   filter:drop-shadow(0 0 8px rgba(255,46,136,.8)) drop-shadow(0 0 24px rgba(123,47,247,.7))}
 .ticker{font-family:var(--display);font-size:clamp(1.4rem,6vw,2.2rem);color:var(--cyan);
   text-shadow:0 0 6px var(--cyan),0 0 18px rgba(0,229,255,.8),0 0 40px rgba(0,229,255,.5);animation:flicker 6s infinite}
 @keyframes flicker{0%,18%,22%,25%,53%,57%,100%{opacity:1}20%,24%,55%{opacity:.45}}
-.slogan{font-size:clamp(1rem,4vw,1.2rem);font-weight:500;max-width:520px;color:#fff;text-shadow:0 1px 2px rgba(11,6,32,.9),0 2px 14px rgba(11,6,32,.85)}
+.slogan{font-family:var(--display);font-weight:400;font-size:clamp(1.05rem,4.6vw,1.45rem);line-height:1.25;max-width:560px;color:var(--yellow);
+  text-shadow:0 0 12px rgba(255,212,0,.55),0 2px 10px rgba(11,6,32,.9)}
+.subtext{font-size:clamp(.95rem,3.8vw,1.05rem);max-width:540px;color:#fff;text-shadow:0 1px 2px rgba(11,6,32,.9),0 2px 14px rgba(11,6,32,.85)}
 .cta{display:flex;flex-direction:column;gap:12px;width:100%;max-width:360px;margin-top:6px}
 
 /* ---------- Contract bar ---------- */
@@ -144,48 +148,52 @@ section{position:relative;padding:72px 0}
 .copy.ok{background:#14c98a;box-shadow:0 0 18px rgba(20,201,138,.8)}
 
 /* ---------- Car divider ---------- */
-.road{position:relative;height:70px;margin-top:48px;overflow:hidden;border-bottom:2px solid rgba(255,46,136,.5);
+.road{position:relative;height:70px;margin-top:40px;overflow:hidden;
   background:linear-gradient(180deg,transparent 60%,rgba(255,46,136,.08))}
-.road::after{content:"";position:absolute;left:0;right:0;bottom:12px;height:3px;background:repeating-linear-gradient(90deg,var(--yellow) 0 30px,transparent 30px 60px);opacity:.6;animation:lane 0.6s linear infinite}
+.road::after{content:"";position:absolute;left:0;right:0;bottom:12px;height:3px;background:repeating-linear-gradient(90deg,var(--yellow) 0 30px,transparent 30px 60px);opacity:.6;animation:lane .6s linear infinite}
 @keyframes lane{to{background-position:-60px 0}}
 .car{position:absolute;bottom:14px;width:190px;color:#1b0b3a;animation:drive 9s linear infinite}
 .car svg{width:100%;height:auto;filter:drop-shadow(0 0 6px rgba(0,229,255,.55))}
 @keyframes drive{from{left:-220px}to{left:100%}}
 
-/* ---------- Story / briefing ---------- */
-.cards{display:grid;gap:18px;margin-top:36px}
-.brief{position:relative;padding:26px 22px 22px;border-radius:var(--radius);background:linear-gradient(160deg,#1f0f4a,#120830);border:1px solid rgba(123,47,247,.5);overflow:hidden}
-.brief::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent 0 22px,rgba(255,255,255,.015) 22px 44px);pointer-events:none}
-.brief .file{display:flex;justify-content:space-between;align-items:center;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.74rem;color:var(--muted);
-  border-bottom:1px dashed #ffffff26;padding-bottom:10px;margin-bottom:14px;letter-spacing:.06em}
-.stamp{font-family:var(--display);font-size:.7rem;color:var(--pink);border:2px solid var(--pink);padding:2px 8px;border-radius:4px;transform:rotate(-6deg);
-  text-shadow:0 0 6px rgba(255,46,136,.7);box-shadow:0 0 8px rgba(255,46,136,.4)}
-.brief h3{font-family:var(--display);font-weight:400;font-size:1.25rem;color:var(--yellow);text-shadow:0 0 12px rgba(255,212,0,.45);margin-bottom:8px}
-.brief p{color:#dccff7;font-size:.97rem}
-.brief .redact{background:#000;color:#000;border-radius:2px;padding:0 4px;user-select:none}
+/* ---------- Marquee ---------- */
+.marquee{position:relative;overflow:hidden;padding:14px 0;transform:rotate(-2deg) scale(1.04);margin:24px 0;
+  background:linear-gradient(90deg,var(--pink),var(--orange),var(--yellow));box-shadow:0 0 30px rgba(255,46,136,.5);border-block:2px solid #fff4}
+.marquee.alt{transform:rotate(2deg) scale(1.04);background:linear-gradient(90deg,var(--purple),var(--pink),var(--cyan))}
+.marquee-track{display:flex;width:max-content;animation:marquee 26s linear infinite}
+.marquee.alt .marquee-track{animation-direction:reverse}
+.marquee span{flex:none;padding-right:.6em;font-family:var(--display);font-size:clamp(1rem,4vw,1.4rem);white-space:nowrap;color:#1a0420;letter-spacing:.04em}
+.marquee.alt span{color:#fff;text-shadow:0 0 10px rgba(0,0,0,.35)}
+@keyframes marquee{to{transform:translateX(-50%)}}
 
-/* ---------- How to buy ---------- */
-.missions{display:grid;gap:16px;margin-top:36px;counter-reset:m}
-.mission{position:relative;display:flex;gap:16px;align-items:flex-start;padding:20px;border-radius:var(--radius);background:rgba(20,10,51,.85);
-  border:1px solid rgba(0,229,255,.28);transition:border-color .25s,box-shadow .25s,transform .25s}
-.mission:hover{border-color:var(--cyan);box-shadow:0 0 26px rgba(0,229,255,.3);transform:translateY(-3px)}
-.mission .num{flex:none;width:58px;height:58px;display:grid;place-items:center;border-radius:14px;font-family:var(--display);font-size:1.5rem;color:#0B0620;
+/* ---------- Why cards ---------- */
+.why{display:grid;gap:16px;margin-top:36px}
+.why-card{position:relative;padding:26px 22px;border-radius:var(--radius);background:linear-gradient(160deg,#1f0f4a,#120830);border:1px solid rgba(123,47,247,.5);
+  overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}
+.why-card::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent 0 22px,rgba(255,255,255,.015) 22px 44px);pointer-events:none}
+.why-card:hover{transform:translateY(-4px);border-color:var(--pink);box-shadow:0 0 30px rgba(255,46,136,.35)}
+.why-card .emoji{width:60px;height:60px;display:grid;place-items:center;font-size:1.9rem;border-radius:16px;margin-bottom:14px;
+  background:radial-gradient(circle,rgba(255,212,0,.22),rgba(255,46,136,.12));box-shadow:0 0 20px rgba(255,138,0,.3)}
+.why-card h3{font-family:var(--display);font-weight:400;font-size:1.2rem;color:var(--yellow);text-shadow:0 0 12px rgba(255,212,0,.45);margin-bottom:8px}
+.why-card p{color:#dccff7;font-size:.97rem}
+
+/* ---------- Join the movement ---------- */
+.movement-box{position:relative;padding:40px 20px;border-radius:24px;text-align:center;overflow:hidden;
+  background:radial-gradient(ellipse at top,rgba(0,229,255,.22),transparent 60%),linear-gradient(180deg,#1d0f47,#0f0729);
+  border:1px solid rgba(0,229,255,.4);box-shadow:0 0 60px rgba(0,229,255,.18)}
+.movement-box .cta{margin:26px auto 0}
+
+/* ---------- Buy in 30s ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:32px;position:relative}
+.step{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding:18px 8px;border-radius:var(--radius);
+  background:rgba(20,10,51,.85);border:1px solid rgba(0,229,255,.28);transition:border-color .25s,box-shadow .25s,transform .25s}
+.step:hover{border-color:var(--cyan);box-shadow:0 0 26px rgba(0,229,255,.3);transform:translateY(-3px)}
+.step .ico{position:relative;width:56px;height:56px;display:grid;place-items:center;border-radius:50%;color:#0B0620;
   background:linear-gradient(135deg,var(--cyan),var(--purple));box-shadow:0 0 18px rgba(0,229,255,.5)}
-.mission small{display:block;font-family:var(--display);font-size:.7rem;letter-spacing:.16em;color:var(--pink)}
-.mission h3{font-family:var(--display);font-weight:400;font-size:1.15rem;margin:2px 0 6px}
-.mission p{color:var(--muted);font-size:.95rem}
-.mission a.inline{color:var(--cyan);font-weight:700;border-bottom:1px solid currentColor}
-.reward{display:inline-block;margin-top:10px;font-size:.75rem;font-weight:700;color:var(--yellow);letter-spacing:.06em}
-
-/* ---------- Tokenomics ---------- */
-.tokens{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:36px}
-.tok{padding:22px 16px;border-radius:var(--radius);text-align:center;background:linear-gradient(180deg,rgba(255,138,0,.12),rgba(123,47,247,.12));
-  border:1px solid rgba(255,138,0,.35);transition:transform .25s,box-shadow .25s}
-.tok:hover{transform:translateY(-4px);box-shadow:0 0 28px rgba(255,138,0,.35)}
-.tok .ico{width:52px;height:52px;margin:0 auto 12px;display:grid;place-items:center;border-radius:50%;background:rgba(255,212,0,.12);color:var(--yellow);box-shadow:0 0 16px rgba(255,212,0,.3)}
-.tok .ico svg{width:26px;height:26px}
-.tok h3{font-family:var(--display);font-weight:400;font-size:1rem;line-height:1.2;color:#fff;margin-bottom:6px}
-.tok p{font-size:.85rem;color:var(--muted)}
+.step .ico svg{width:26px;height:26px}
+.step .n{position:absolute;top:-6px;right:-6px;width:22px;height:22px;display:grid;place-items:center;border-radius:50%;background:var(--pink);color:#fff;font-family:var(--display);font-size:.7rem;box-shadow:0 0 10px var(--pink)}
+.step p{font-size:.8rem;font-weight:700;line-height:1.35;color:#e6dbff}
+.steps-cta{display:flex;justify-content:center;margin-top:28px}
 
 /* ---------- Gallery ---------- */
 .gallery{display:grid;grid-template-columns:1fr;gap:16px;margin-top:36px}
@@ -195,6 +203,7 @@ section{position:relative;padding:72px 0}
 .shot figcaption{position:absolute;left:12px;bottom:12px;padding:4px 12px;border-radius:999px;background:rgba(11,6,32,.75);font-family:var(--display);font-size:.72rem;letter-spacing:.1em;color:var(--cyan)}
 .shot:hover{border-color:var(--pink);box-shadow:0 0 30px rgba(255,46,136,.6),0 0 60px rgba(123,47,247,.4)}
 .shot:hover img{transform:scale(1.08);filter:saturate(1.2) contrast(1.05)}
+.handle{color:var(--cyan);font-weight:700}
 
 /* ---------- Roadmap ---------- */
 .plan{position:relative;display:grid;gap:22px;margin-top:40px;padding-left:28px}
@@ -203,18 +212,19 @@ section{position:relative;padding:72px 0}
 .phase::before{content:"";position:absolute;left:-27px;top:26px;width:17px;height:17px;border-radius:50%;background:var(--night);border:3px solid var(--pink);box-shadow:0 0 12px var(--pink)}
 .phase.active::before{background:var(--pink)}
 .phase small{font-family:var(--display);font-size:.72rem;letter-spacing:.16em;color:var(--orange)}
-.phase h3{font-family:var(--display);font-weight:400;font-size:1.4rem;margin:4px 0 4px;color:#fff;text-shadow:0 0 12px rgba(255,46,136,.6)}
-.phase .codename{font-size:.85rem;color:var(--muted);font-style:italic;margin-bottom:12px}
+.phase h3{font-family:var(--display);font-weight:400;font-size:1.4rem;margin:4px 0 14px;color:#fff;text-shadow:0 0 12px rgba(255,46,136,.6)}
 .phase ul{list-style:none;display:grid;gap:8px}
 .phase li{position:relative;padding-left:26px;font-size:.95rem;color:#e6dbff}
 .phase li::before{content:"";position:absolute;left:0;top:4px;width:16px;height:16px;border-radius:4px;border:2px solid var(--cyan)}
 .phase li.done::before{background:var(--cyan) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3 3 7-7' fill='none' stroke='%230B0620' stroke-width='2.5'/%3E%3C/svg%3E") center/12px no-repeat;box-shadow:0 0 8px var(--cyan)}
 
-/* ---------- Join banner ---------- */
-.join{text-align:center;padding:64px 0}
-.join-box{padding:40px 20px;border-radius:24px;background:radial-gradient(ellipse at top,rgba(255,46,136,.35),transparent 60%),linear-gradient(180deg,#2a0b55,#140a33);
-  border:1px solid rgba(255,46,136,.4);box-shadow:0 0 60px rgba(123,47,247,.35)}
-.join-box .cta{margin:24px auto 0}
+/* ---------- Final CTA ---------- */
+.final{text-align:center;padding:80px 0 90px;overflow:hidden}
+.final::before{content:"";position:absolute;left:50%;bottom:-40%;width:min(120vw,900px);aspect-ratio:1;transform:translateX(-50%);border-radius:50%;
+  background:radial-gradient(circle,rgba(255,138,0,.35),rgba(255,46,136,.18) 40%,transparent 70%);pointer-events:none}
+.final .h2{max-width:900px;margin:0 auto}
+.final .lead{font-size:1.15rem;color:#fde7ff}
+.final .btn{margin-top:30px}
 
 /* ---------- Footer ---------- */
 footer{padding:48px 0 calc(40px + env(safe-area-inset-bottom));border-top:1px solid #ffffff14;background:#07031a;text-align:center}
@@ -227,17 +237,19 @@ footer{padding:48px 0 calc(40px + env(safe-area-inset-bottom));border-top:1px so
 
 /* ---------- Reveal ---------- */
 .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
-.reveal.from-left{transform:translateX(-40px)}
-.reveal.from-right{transform:translateX(40px)}
 .reveal.in{opacity:1;transform:none}
 .no-js .reveal{opacity:1;transform:none}
 
 /* ---------- Breakpoints ---------- */
 @media (min-width:560px){
-  .cta{flex-direction:row;max-width:none;justify-content:center}
+  .cta{flex-direction:row;max-width:none;justify-content:center;flex-wrap:wrap}
   .ca-box{flex-direction:row;align-items:center;padding:14px 18px}
   .ca-label{flex:none}
   .ca-row{flex:1}
+  .why{grid-template-columns:1fr 1fr}
+  .steps{gap:18px}
+  .step{padding:24px 16px}
+  .step p{font-size:.92rem}
   .gallery{grid-template-columns:1fr 1fr}
   .gallery .shot:first-child{grid-column:span 2;aspect-ratio:2/1}
 }
@@ -245,19 +257,19 @@ footer{padding:48px 0 calc(40px + env(safe-area-inset-bottom));border-top:1px so
   section{padding:110px 0}
   .nav-links{display:flex}
   .hero-inner{flex-direction:row;text-align:left;justify-content:space-between;align-items:center;gap:40px;padding-bottom:26vh}
-  .hero-copy{flex:1;display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+  .hero-copy{flex:1;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
   .cta{justify-content:flex-start}
   .mascot{width:400px;order:2}
   .palm.r2{display:block;right:120px;width:150px;height:300px;transform:scaleX(-1);animation:sway-r 8.5s ease-in-out infinite -3s;transform-origin:bottom center}
-  .cards{grid-template-columns:repeat(3,1fr)}
-  .missions{grid-template-columns:1fr 1fr}
-  .tokens{grid-template-columns:repeat(4,1fr)}
+  .why{grid-template-columns:repeat(4,1fr)}
+  .movement-box{padding:64px 40px}
+  .movement-box .cta{justify-content:center}
+  .steps::before{content:"";position:absolute;left:16%;right:16%;top:52px;height:2px;background:repeating-linear-gradient(90deg,var(--cyan) 0 10px,transparent 10px 20px);opacity:.5}
   .gallery{grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr}
   .gallery .shot:first-child{grid-column:auto;grid-row:span 2;aspect-ratio:auto}
   .plan{grid-template-columns:repeat(3,1fr);padding-left:0;padding-top:30px}
   .plan::before{left:6px;right:6px;top:0;bottom:auto;width:auto;height:3px;background:linear-gradient(90deg,var(--pink),var(--orange),var(--cyan))}
   .phase::before{left:22px;top:-38px}
-  .join-box{padding:60px 40px}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -281,16 +293,21 @@ footer{padding:48px 0 calc(40px + env(safe-area-inset-bottom));border-top:1px so
     <path fill="currentColor" d="M108 110 Q168 112 194 182 Q150 126 110 116 Z"/>
     <circle fill="currentColor" cx="104" cy="118" r="6"/><circle fill="currentColor" cx="114" cy="120" r="5"/>
   </symbol>
+  <symbol id="i-tg" viewBox="0 0 24 24"><path fill="currentColor" d="M21.9 4.3l-3.2 15.1c-.2 1.1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.2 13 1.4 11.5c-1-.3-1.1-1 .2-1.5L20.6 2.8c.9-.3 1.6.2 1.3 1.5z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path fill="currentColor" d="M18.2 2.3h3.4l-7.4 8.5 8.7 11.5h-6.8l-5.3-7-6.1 7H1.3l7.9-9L.9 2.3h7l4.8 6.4 5.5-6.4zm-1.2 18h1.9L7 4.2H5L17 20.3z"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M7 4L3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M7 15l4-4 3 3 6-7"/></symbol>
 </svg>
 
 <!-- NAV -->
 <header class="nav" id="nav">
   <div class="wrap">
-    <a href="#top" class="brand"><img src="images/favicon.png" alt="" width="38" height="38"><span data-name>Sunset Queen</span></a>
+    <a href="#top" class="brand"><img src="images/favicon.png" alt="" width="38" height="38"><span>Sunset Queen</span></a>
     <nav class="nav-links" aria-label="Main">
-      <a href="#story">Story</a><a href="#buy">How to Buy</a><a href="#tokenomics">Tokenomics</a><a href="#gallery">Gallery</a><a href="#roadmap">Roadmap</a>
+      <a href="#why">Why $QUEEN</a><a href="#buy">Buy</a><a href="#gallery">Gallery</a><a href="#roadmap">Roadmap</a>
     </nav>
-    <a class="btn btn-primary" data-link="buy" href="#" target="_blank" rel="noopener">Buy <span data-ticker>$QUEEN</span></a>
+    <a class="btn btn-primary" data-link="buy" href="[LINK_PONS]" target="_blank" rel="noopener">Buy $QUEEN</a>
   </div>
 </header>
 
@@ -316,19 +333,14 @@ footer{padding:48px 0 calc(40px + env(safe-area-inset-bottom));border-top:1px so
       </picture>
     </div>
     <div class="hero-copy">
-      <span class="badge-chain"><i></i> Live on Robinhood Chain</span>
-      <h1 class="title" data-name>Sunset Queen</h1>
-      <div class="ticker" data-ticker>$QUEEN</div>
-      <p class="slogan">The neon coast has a new ruler. Grab your shades, start the engine, and ride with the crew.</p>
+      <span class="badge-live">🔴 LIVE ON ROBINHOOD CHAIN</span>
+      <h1 class="title">Sunset Queen</h1>
+      <div class="ticker">$QUEEN</div>
+      <p class="slogan">The hottest ride on the chain just pulled up.</p>
+      <p class="subtext">Neon nights. Gold crowns. A crew that never sleeps. $QUEEN is the meme the whole coast is talking about — and the party is just getting started.</p>
       <div class="cta">
-        <a class="btn btn-primary" data-link="buy" href="#" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          Buy <span data-ticker>$QUEEN</span>
-        </a>
-        <a class="btn btn-ghost" data-link="telegram" href="#" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3l-3.2 15.1c-.2 1.1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.2 13 1.4 11.5c-1-.3-1.1-1 .2-1.5L20.6 2.8c.9-.3 1.6.2 1.3 1.5z"/></svg>
-          Join the Crew
-        </a>
+        <a class="btn btn-primary" data-link="buy" href="[LINK_PONS]" target="_blank" rel="noopener"><svg><use href="#i-bolt"/></svg>Buy $QUEEN Now</a>
+        <a class="btn btn-ghost" data-link="telegram" href="[TELEGRAM]" target="_blank" rel="noopener"><svg><use href="#i-tg"/></svg>Join the Crew</a>
       </div>
     </div>
   </div>
@@ -340,7 +352,7 @@ footer{padding:48px 0 calc(40px + env(safe-area-inset-bottom));border-top:1px so
     <div class="ca-box reveal">
       <span class="ca-label">Contract</span>
       <div class="ca-row">
-        <code class="ca-addr" id="ca">0x0000000000000000000000000000000000000000</code>
+        <code class="ca-addr" id="ca">[CONTRATO]</code>
         <button class="copy" id="copy" type="button" aria-live="polite">Copy</button>
       </div>
     </div>
@@ -359,107 +371,98 @@ footer{padding:48px 0 calc(40px + env(safe-area-inset-bottom));border-top:1px so
   </div>
 </section>
 
-<!-- STORY -->
-<section id="story">
+<!-- MARQUEE -->
+<div class="marquee" aria-label="👑 $QUEEN IS LIVE • 🌴 RIDE WITH THE CREW • 🌆 NEON NEVER SLEEPS • 🚀 EARLY IS A STATE OF MIND •">
+  <div class="marquee-track" aria-hidden="true"></div>
+</div>
+
+<!-- WHY -->
+<section id="why">
   <div class="wrap">
     <div class="center reveal">
-      <span class="kicker">// Mission Briefing</span>
-      <h2 class="h2">The Story</h2>
-      <p class="lead">Three case files. One queen. A whole coastline that never sleeps.</p>
+      <span class="kicker">// The Vibe</span>
+      <h2 class="h2">Why $QUEEN</h2>
     </div>
-    <div class="cards">
-      <article class="brief reveal">
-        <div class="file"><span>CASE FILE #001</span><span class="stamp">Classified</span></div>
-        <h3>The Arrival</h3>
-        <p>One summer night a white convertible rolled down the boulevard with the radio blasting synth. Behind the wheel: a stranger in heart-shaped shades and a crown made of <span class="redact">██████</span> gold. Nobody knew her name. Everybody remembered her style.</p>
+    <div class="why">
+      <article class="why-card reveal">
+        <div class="emoji" aria-hidden="true">👑</div>
+        <h3>Pure Meme Energy</h3>
+        <p>No complicated roadmap to a utopia. Just a queen, a crew and the best vibes on the chain.</p>
       </article>
-      <article class="brief reveal">
-        <div class="file"><span>CASE FILE #002</span><span class="stamp">Eyes Only</span></div>
-        <h3>The Takeover</h3>
-        <p>She didn't need a gang. She built a crew — artists, meme lords, night drivers and degens who just wanted to have fun. Every neon sign on the strip started flickering her colors. The coast had a new queen.</p>
+      <article class="why-card reveal">
+        <div class="emoji" aria-hidden="true">🌴</div>
+        <h3>Fair From Day One</h3>
+        <p>No presale. No VIP wallets. Everyone entered through the same door.</p>
       </article>
-      <article class="brief reveal">
-        <div class="file"><span>CASE FILE #003</span><span class="stamp">Active</span></div>
-        <h3>The Job</h3>
-        <p>Now the crew is heading to Robinhood Chain for the biggest party the coast has ever seen. The plan is simple: make memes, recruit friends, and paint the whole chain sunset pink. You in?</p>
+      <article class="why-card reveal">
+        <div class="emoji" aria-hidden="true">🔒</div>
+        <h3>Built to Last</h3>
+        <p>Fixed supply, no extra minting, liquidity locked after graduation.</p>
+      </article>
+      <article class="why-card reveal">
+        <div class="emoji" aria-hidden="true">🔥</div>
+        <h3>Community Run</h3>
+        <p>Memes, raids, art drops. The crew makes the noise, the queen takes the crown.</p>
       </article>
     </div>
   </div>
 </section>
 
-<!-- HOW TO BUY -->
+<!-- JOIN THE MOVEMENT -->
+<section id="movement">
+  <div class="wrap">
+    <div class="movement-box reveal">
+      <span class="kicker">// Join the Movement</span>
+      <h2 class="h2">Every legend starts with a small crew.</h2>
+      <p class="lead" style="margin-left:auto;margin-right:auto">Right now the crew is small, loud and early. Grab a seat in the convertible before the whole coast shows up.</p>
+      <div class="cta">
+        <a class="btn btn-primary" data-link="buy" href="[LINK_PONS]" target="_blank" rel="noopener"><svg><use href="#i-swap"/></svg>Buy on Pons</a>
+        <a class="btn btn-ghost" data-link="chart" href="[LINK_GRAFICO]" target="_blank" rel="noopener"><svg><use href="#i-chart"/></svg>View Chart</a>
+        <a class="btn btn-purple" data-link="x" href="[LINK_X]" target="_blank" rel="noopener"><svg><use href="#i-x"/></svg>Follow on X</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUY IN 30 SECONDS -->
 <section id="buy">
   <div class="wrap">
     <div class="center reveal">
-      <span class="kicker">// New Objective</span>
-      <h2 class="h2">How to Buy</h2>
-      <p class="lead">Four missions between you and the crew. No cutscenes, no skips.</p>
+      <span class="kicker">// Quick Job</span>
+      <h2 class="h2">Buy in 30 Seconds</h2>
     </div>
-    <div class="missions">
-      <div class="mission reveal from-left">
-        <div class="num">01</div>
-        <div><small>Mission 01</small><h3>Get MetaMask</h3>
-          <p>Download <a class="inline" href="https://metamask.io/download/" target="_blank" rel="noopener">MetaMask</a> (app or browser extension) and create your wallet. Keep your secret phrase offline — never share it with anyone.</p>
-          <span class="reward">★ Reward: your getaway wallet</span></div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="ico"><span class="n">1</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="3"/><path d="M3 10h18M16 15h2"/><path d="M6 6V5a2 2 0 0 1 2-2h8"/></svg></div>
+        <p>Connect MetaMask on Robinhood Chain</p>
       </div>
-      <div class="mission reveal from-right">
-        <div class="num">02</div>
-        <div><small>Mission 02</small><h3>Get ETH on Robinhood Chain</h3>
-          <p>Add Robinhood Chain to MetaMask and load up some ETH for gas and swaps. Bridge it over or send it from an exchange that supports the network.</p>
-          <span class="reward">★ Reward: fuel in the tank</span></div>
+      <div class="step reveal">
+        <div class="ico"><span class="n">2</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7M21 3l-9 9"/><path d="M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"/></svg></div>
+        <p>Open $QUEEN on Pons</p>
       </div>
-      <div class="mission reveal from-left">
-        <div class="num">03</div>
-        <div><small>Mission 03</small><h3>Go to Pons</h3>
-          <p>Open the <a class="inline" data-link="buy" href="#" target="_blank" rel="noopener"><span data-ticker>$QUEEN</span> page on Pons</a> and connect your wallet. Double-check the contract address matches the one above.</p>
-          <span class="reward">★ Reward: you found the hideout</span></div>
+      <div class="step reveal">
+        <div class="ico"><span class="n">3</span><svg><use href="#i-swap"/></svg></div>
+        <p>Swap ETH → $QUEEN</p>
       </div>
-      <div class="mission reveal from-right">
-        <div class="num">04</div>
-        <div><small>Mission 04</small><h3>Swap for <span data-ticker>$QUEEN</span></h3>
-          <p>Choose how much ETH you want to swap, confirm in MetaMask, and welcome to the crew. Now go post your shades in the Telegram.</p>
-          <span class="reward">★ Reward: crew membership unlocked</span></div>
-      </div>
+    </div>
+    <div class="steps-cta reveal">
+      <a class="btn btn-primary" data-link="buy" href="[LINK_PONS]" target="_blank" rel="noopener"><svg><use href="#i-bolt"/></svg>Buy $QUEEN</a>
     </div>
   </div>
 </section>
 
-<!-- TOKENOMICS -->
-<section id="tokenomics">
-  <div class="wrap">
-    <div class="center reveal">
-      <span class="kicker">// The Split</span>
-      <h2 class="h2">Tokenomics</h2>
-      <p class="lead">No insiders, no back rooms. Everyone gets in through the same door.</p>
-    </div>
-    <div class="tokens">
-      <div class="tok reveal">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></div>
-        <h3>Fixed Supply</h3><p>Supply set at launch. No extra minting.</p>
-      </div>
-      <div class="tok reveal">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7h14M5 7l-3 7a4 4 0 0 0 6 0L5 7zM19 7l-3 7a4 4 0 0 0 6 0l-3-7z"/></svg></div>
-        <h3>Fair Launch</h3><p>Same rules, same curve, same start line for everyone.</p>
-      </div>
-      <div class="tok reveal">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></div>
-        <h3>No Presale</h3><p>No VIP list, no private round. Zero.</p>
-      </div>
-      <div class="tok reveal">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
-        <h3>Liquidity Locked</h3><p>Liquidity gets locked after graduation.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- MARQUEE -->
+<div class="marquee alt" aria-hidden="true">
+  <div class="marquee-track"></div>
+</div>
 
 <!-- GALLERY -->
 <section id="gallery">
   <div class="wrap">
     <div class="center reveal">
       <span class="kicker">// Surveillance Photos</span>
-      <h2 class="h2">The Gallery</h2>
-      <p class="lead">Spotted on the strip. Make your own and tag the crew.</p>
+      <h2 class="h2">Spotted on the Strip</h2>
+      <p class="lead">Make a meme, tag <span class="handle" id="handle">@[SEU_X]</span>, get featured.</p>
     </div>
     <div class="gallery">
       <figure class="shot reveal"><img src="images/banner.jpg" alt="The queen leaning on a white convertible at sunset" loading="lazy" decoding="async" width="1000" height="1000"><figcaption>Sunset Patrol</figcaption></figure>
@@ -475,91 +478,87 @@ footer{padding:48px 0 calc(40px + env(safe-area-inset-bottom));border-top:1px so
     <div class="center reveal">
       <span class="kicker">// The Heist Plan</span>
       <h2 class="h2">Roadmap</h2>
-      <p class="lead">Every great job needs a plan. Here's ours.</p>
     </div>
     <div class="plan">
       <div class="phase active reveal">
-        <small>Phase 1</small><h3>Launch</h3><p class="codename">Codename: "Ignition"</p>
+        <small>Phase 1</small><h3>Ignition</h3>
         <ul>
-          <li class="done">Deploy <span data-ticker>$QUEEN</span> on Pons</li>
-          <li class="done">Website, X and Telegram go live</li>
-          <li>First wave of crew members</li>
-          <li>Meme kit for the community</li>
+          <li class="done">Launch on Pons</li>
+          <li class="done">Website, X and Telegram live</li>
+          <li>First crew wave</li>
         </ul>
       </div>
       <div class="phase reveal">
-        <small>Phase 2</small><h3>Community</h3><p class="codename">Codename: "Night Shift"</p>
+        <small>Phase 2</small><h3>Night Shift</h3>
         <ul>
-          <li>Meme &amp; art contests</li>
-          <li>X raids and Spaces with the crew</li>
-          <li>Community-made stickers &amp; wallpapers</li>
-          <li>Crew roles and holder shoutouts</li>
+          <li>Meme contests</li>
+          <li>X raids &amp; Spaces</li>
+          <li>Holder shoutouts</li>
         </ul>
       </div>
       <div class="phase reveal">
-        <small>Phase 3</small><h3>Graduation</h3><p class="codename">Codename: "Grand Finale"</p>
+        <small>Phase 3</small><h3>Grand Finale</h3>
         <ul>
-          <li>Complete the Pons bonding curve</li>
-          <li>Liquidity locked after graduation</li>
-          <li>Chart trackers &amp; community listings</li>
-          <li>Biggest sunset party on the chain</li>
+          <li>Complete the bonding curve</li>
+          <li>Liquidity locked</li>
+          <li>Chart &amp; tracker listings</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- JOIN -->
-<section class="join">
-  <div class="wrap">
-    <div class="join-box reveal">
-      <span class="kicker">// Last Call</span>
-      <h2 class="h2">Ride With the Crew</h2>
-      <p class="lead" style="margin-left:auto;margin-right:auto">The engine is running and the sun is going down. Hop in.</p>
-      <div class="cta" style="justify-content:center">
-        <a class="btn btn-primary" data-link="buy" href="#" target="_blank" rel="noopener">Buy <span data-ticker>$QUEEN</span></a>
-        <a class="btn btn-ghost" data-link="telegram" href="#" target="_blank" rel="noopener">Join the Crew</a>
-      </div>
-    </div>
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="wrap reveal">
+    <h2 class="h2">The sun is going down. The engine is running.</h2>
+    <p class="lead" style="margin-left:auto;margin-right:auto">Are you riding with the queen or watching from the sidewalk?</p>
+    <a class="btn btn-primary btn-xl" data-link="buy" href="[LINK_PONS]" target="_blank" rel="noopener"><svg><use href="#i-bolt"/></svg>Buy $QUEEN</a>
   </div>
 </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <a href="#top" class="brand" style="justify-content:center"><img src="images/favicon.png" alt="" width="38" height="38" loading="lazy"><span data-name>Sunset Queen</span></a>
+    <a href="#top" class="brand" style="justify-content:center"><img src="images/favicon.png" alt="" width="38" height="38" loading="lazy"><span>Sunset Queen</span></a>
     <div class="socials">
-      <a data-link="x" href="#" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.2 2.3h3.4l-7.4 8.5 8.7 11.5h-6.8l-5.3-7-6.1 7H1.3l7.9-9L.9 2.3h7l4.8 6.4 5.5-6.4zm-1.2 18h1.9L7 4.2H5L17 20.3z"/></svg></a>
-      <a data-link="telegram" href="#" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3l-3.2 15.1c-.2 1.1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.2 13 1.4 11.5c-1-.3-1.1-1 .2-1.5L20.6 2.8c.9-.3 1.6.2 1.3 1.5z"/></svg></a>
+      <a data-link="x" href="[LINK_X]" target="_blank" rel="noopener" aria-label="X"><svg><use href="#i-x"/></svg></a>
+      <a data-link="telegram" href="[TELEGRAM]" target="_blank" rel="noopener" aria-label="Telegram"><svg><use href="#i-tg"/></svg></a>
+      <a data-link="buy" href="[LINK_PONS]" target="_blank" rel="noopener" aria-label="Pons"><svg><use href="#i-swap"/></svg></a>
     </div>
-    <p class="disclaimer"><span data-ticker>$QUEEN</span> is a memecoin with no intrinsic value or expectation of financial return. Not financial advice. Only spend what you can afford to lose.</p>
-    <p class="copyright">© <span id="year">2026</span> <span data-name>Sunset Queen</span> · Made by the crew, for the crew.</p>
+    <p class="disclaimer">$QUEEN is a memecoin with no intrinsic value or expectation of financial return. Not financial advice. Only spend what you can afford to lose.</p>
+    <p class="copyright">© 2026 Sunset Queen · Made by the crew, for the crew.</p>
   </div>
 </footer>
 
 <script>
 /* ============================================================
-   EDIT YOUR COIN DATA HERE
+   EDIT YOUR LINKS HERE (they replace every matching button)
    ============================================================ */
 const CONFIG = {
-  name:     "Sunset Queen",
-  ticker:   "$QUEEN",
-  contract: "0x0000000000000000000000000000000000000000",
+  contract: "[CONTRATO]",
+  xHandle:  "@[SEU_X]",
   links: {
-    buy:      "#",   // your coin page on Pons
-    x:        "#",   // https://x.com/yourhandle
-    telegram: "#"    // https://t.me/yourgroup
+    buy:      "[LINK_PONS]",
+    telegram: "[TELEGRAM]",
+    x:        "[LINK_X]",
+    chart:    "[LINK_GRAFICO]"
   }
 };
+const MARQUEE = "👑 $QUEEN IS LIVE • 🌴 RIDE WITH THE CREW • 🌆 NEON NEVER SLEEPS • 🚀 EARLY IS A STATE OF MIND •";
 
 document.body.classList.remove("no-js");
 
-// Fill in name, ticker, contract and links
-document.querySelectorAll("[data-name]").forEach(el => el.textContent = CONFIG.name);
-document.querySelectorAll("[data-ticker]").forEach(el => el.textContent = CONFIG.ticker);
-document.querySelectorAll("[data-link]").forEach(el => el.href = CONFIG.links[el.dataset.link] || "#");
+// Fill contract, handle and links
+document.querySelectorAll("[data-link]").forEach(el => el.href = CONFIG.links[el.dataset.link]);
 document.getElementById("ca").textContent = CONFIG.contract;
-document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("handle").textContent = CONFIG.xHandle;
+
+// Marquee: repeat the text enough to fill wide screens, then duplicate for a seamless loop
+document.querySelectorAll(".marquee-track").forEach(track => {
+  const half = Array.from({ length: 4 }, () => `<span>${MARQUEE}</span>`).join("");
+  track.innerHTML = half + half;
+});
 
 // Copy contract
 const copyBtn = document.getElementById("copy");
@@ -594,7 +593,7 @@ if ("IntersectionObserver" in window) {
       e.target.classList.add("in");
       // once revealed, drop the reveal classes so hover transitions work normally
       e.target.addEventListener("transitionend", () => {
-        e.target.classList.remove("reveal", "in", "from-left", "from-right");
+        e.target.classList.remove("reveal", "in");
         e.target.style.transitionDelay = "";
       }, { once: true });
       io.unobserve(e.target);
