@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sunset Queen ($QUEEN) — Rule the Neon Coast</title>
+<meta name="description" content="$QUEEN is the community memecoin of the neon coast, living on Robinhood Chain. Join the crew.">
+<meta name="theme-color" content="#0B0620">
+<meta property="og:title" content="Sunset Queen ($QUEEN)">
+<meta property="og:description" content="The queen of the neon coast just pulled up on Robinhood Chain. Join the crew.">
+<meta property="og:image" content="images/og.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="images/logo.webp" type="image/webp">
+<style>
+:root{
+  --pink:#FF2E88; --orange:#FF8A00; --purple:#7B2FF7; --cyan:#00E5FF; --yellow:#FFD400;
+  --night:#0B0620; --night-2:#140A33; --night-3:#1D0F47;
+  --text:#F4ECFF; --muted:#B9A8E0;
+  --sunset:linear-gradient(180deg,var(--yellow) 0%,var(--orange) 40%,var(--pink) 75%,var(--purple) 100%);
+  --radius:18px;
+  --display:"Bungee","Anton",Impact,system-ui,sans-serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--night);color:var(--text);font-family:var(--body);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:6px}
+
+/* ---------- VHS / scanlines ---------- */
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:100;
+  background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 3px);
+  mix-blend-mode:multiply;opacity:.55;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:99;
+  background:radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.55) 100%);
+}
+
+/* ---------- Layout ---------- */
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 16px}
+section{position:relative;padding:72px 0}
+.kicker{display:inline-block;font-family:var(--display);font-size:.75rem;letter-spacing:.18em;color:var(--cyan);text-shadow:0 0 10px rgba(0,229,255,.7);margin-bottom:10px}
+.h2{font-family:var(--display);font-weight:400;font-size:clamp(2rem,8vw,3.6rem);line-height:1.05;color:#fff;
+  text-shadow:0 0 6px rgba(255,46,136,.9),0 0 22px rgba(255,46,136,.6),0 0 48px rgba(123,47,247,.6)}
+.lead{color:var(--muted);max-width:620px;margin-top:12px;font-size:1.02rem}
+.center{text-align:center}.center .lead{margin-left:auto;margin-right:auto}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 26px;border-radius:999px;
+  font-family:var(--display);font-size:1rem;letter-spacing:.04em;transition:transform .2s ease,box-shadow .2s ease,background .2s;will-change:transform}
+.btn:hover{transform:translateY(-2px) scale(1.03)}
+.btn:active{transform:scale(.98)}
+.btn-primary{color:#1a0420;background:linear-gradient(90deg,var(--yellow),var(--orange) 45%,var(--pink));animation:pulse-pink 2.4s ease-in-out infinite}
+.btn-ghost{color:var(--cyan);border:2px solid var(--cyan);background:rgba(11,6,32,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);animation:pulse-cyan 2.4s ease-in-out infinite .6s}
+.btn svg{width:20px;height:20px;flex:none}
+@keyframes pulse-pink{0%,100%{box-shadow:0 0 12px rgba(255,46,136,.55),0 0 0 0 rgba(255,46,136,.45)}50%{box-shadow:0 0 30px rgba(255,46,136,.9),0 0 0 10px rgba(255,46,136,0)}}
+@keyframes pulse-cyan{0%,100%{box-shadow:0 0 10px rgba(0,229,255,.45),inset 0 0 8px rgba(0,229,255,.25)}50%{box-shadow:0 0 28px rgba(0,229,255,.85),inset 0 0 14px rgba(0,229,255,.45)}}
+
+/* ---------- Nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,backdrop-filter .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(11,6,32,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-color:rgba(255,46,136,.25)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:1.05rem}
+.brand img{width:38px;height:38px;border-radius:50%;border:2px solid var(--pink);box-shadow:0 0 12px rgba(255,46,136,.7)}
+.nav-links{display:none;gap:26px;font-weight:600;font-size:.92rem;color:var(--muted)}
+.nav-links a:hover{color:#fff;text-shadow:0 0 10px var(--pink)}
+.nav .btn{min-height:42px;padding:10px 18px;font-size:.85rem}
+
+/* ---------- Hero ---------- */
+.hero{min-height:100svh;padding:96px 0 0;overflow:hidden;display:flex;flex-direction:column;
+  background:linear-gradient(180deg,#0B0620 0%,#25094f 38%,#6a1466 58%,#c2265f 70%,#ff6a3d 80%,#0B0620 80.2%)}
+.stars{position:absolute;inset:0 0 40% 0;background-image:
+  radial-gradient(1.5px 1.5px at 12% 18%,#fff 50%,transparent),radial-gradient(1px 1px at 28% 8%,#fff 50%,transparent),
+  radial-gradient(1.5px 1.5px at 44% 22%,#ffe 50%,transparent),radial-gradient(1px 1px at 62% 12%,#fff 50%,transparent),
+  radial-gradient(1.5px 1.5px at 78% 26%,#fff 50%,transparent),radial-gradient(1px 1px at 90% 6%,#fff 50%,transparent),
+  radial-gradient(1px 1px at 6% 34%,#fff 50%,transparent),radial-gradient(1px 1px at 52% 4%,#fff 50%,transparent),
+  radial-gradient(1.5px 1.5px at 35% 36%,#fff 50%,transparent),radial-gradient(1px 1px at 84% 40%,#fff 50%,transparent);
+  animation:twinkle 4s ease-in-out infinite alternate;opacity:.8}
+@keyframes twinkle{to{opacity:.35}}
+.sun{position:absolute;left:50%;bottom:20%;width:min(92vw,560px);aspect-ratio:1;transform:translate(-50%,50%);border-radius:50%;
+  background:var(--sunset);filter:drop-shadow(0 0 40px rgba(255,138,0,.6)) drop-shadow(0 0 90px rgba(255,46,136,.5));
+  -webkit-mask:linear-gradient(#000 0 46%,transparent 46% 49%,#000 49% 56%,transparent 56% 60%,#000 60% 65%,transparent 65% 70%,#000 70% 74%,transparent 74% 80%,#000 80% 83%,transparent 83%);
+          mask:linear-gradient(#000 0 46%,transparent 46% 49%,#000 49% 56%,transparent 56% 60%,#000 60% 65%,transparent 65% 70%,#000 70% 74%,transparent 74% 80%,#000 80% 83%,transparent 83%)}
+.skyline{position:absolute;left:0;right:0;bottom:20%;height:120px;color:#12062b;opacity:.95}
+.skyline svg{width:100%;height:100%}
+.palm{position:absolute;bottom:19%;color:#08031a;filter:drop-shadow(0 0 1px rgba(255,46,136,.6))}
+.palm svg{width:100%;height:100%}
+.palm.l1{left:-60px;width:220px;height:440px;transform-origin:bottom center;animation:sway 7s ease-in-out infinite}
+.palm.l2{left:70px;width:140px;height:290px;animation:sway 8s ease-in-out infinite -2s;transform-origin:bottom center}
+.palm.r1{right:-50px;width:230px;height:470px;transform:scaleX(-1);transform-origin:bottom center;animation:sway-r 7.5s ease-in-out infinite -1s}
+.palm.r2{display:none}
+@keyframes sway{0%,100%{rotate:-1.5deg}50%{rotate:1.5deg}}
+@keyframes sway-r{0%,100%{rotate:1.5deg}50%{rotate:-1.5deg}}
+.grid{position:absolute;left:0;right:0;bottom:0;height:20%;perspective:220px;perspective-origin:50% 0;overflow:hidden;
+  background:linear-gradient(180deg,#2a0b55 0%,#0B0620 100%)}
+.grid::before{content:"";position:absolute;left:-150%;right:-150%;top:0;height:400%;transform:rotateX(72deg);transform-origin:50% 0;
+  background-image:linear-gradient(90deg,rgba(255,46,136,.9) 2px,transparent 2px),linear-gradient(0deg,rgba(255,46,136,.9) 2px,transparent 2px);
+  background-size:56px 56px;background-position:center 0;animation:grid-move 1s linear infinite}
+.grid::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0B0620 0%,rgba(255,46,136,.35) 4%,transparent 30%,transparent 75%,#0B0620)}
+@keyframes grid-move{to{background-position:center 56px}}
+
+.hero-inner{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;padding-bottom:clamp(150px,22vh,220px)}
+.mascot{position:relative;width:min(74vw,340px);aspect-ratio:1;animation:float 5s ease-in-out infinite}
+.mascot::before{content:"";position:absolute;inset:-14px;border-radius:50%;background:conic-gradient(from 0deg,var(--pink),var(--orange),var(--yellow),var(--cyan),var(--purple),var(--pink));
+  filter:blur(18px);opacity:.75;animation:spin 8s linear infinite}
+.mascot img{position:relative;width:100%;height:100%;object-fit:cover;border-radius:50%;border:4px solid #fff3;box-shadow:0 0 0 3px var(--pink),0 0 40px rgba(255,46,136,.7)}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-16px) rotate(1deg)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.badge-chain{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.5);
+  color:var(--cyan);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.badge-chain i{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);animation:blink 1.4s steps(2) infinite}
+@keyframes blink{50%{opacity:.2}}
+.title{font-family:var(--display);font-weight:400;font-size:clamp(2.6rem,13vw,6.2rem);line-height:.95;
+  background:linear-gradient(180deg,#fff 0%,#ffe36b 35%,var(--orange) 60%,var(--pink) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 8px rgba(255,46,136,.8)) drop-shadow(0 0 24px rgba(123,47,247,.7))}
+.ticker{font-family:var(--display);font-size:clamp(1.4rem,6vw,2.2rem);color:var(--cyan);
+  text-shadow:0 0 6px var(--cyan),0 0 18px rgba(0,229,255,.8),0 0 40px rgba(0,229,255,.5);animation:flicker 6s infinite}
+@keyframes flicker{0%,18%,22%,25%,53%,57%,100%{opacity:1}20%,24%,55%{opacity:.45}}
+.slogan{font-size:clamp(1rem,4vw,1.2rem);font-weight:500;max-width:520px;color:#fff;text-shadow:0 1px 2px rgba(11,6,32,.9),0 2px 14px rgba(11,6,32,.85)}
+.cta{display:flex;flex-direction:column;gap:12px;width:100%;max-width:360px;margin-top:6px}
+
+/* ---------- Contract bar ---------- */
+.ca{padding:0;margin-top:-34px;z-index:5}
+.ca-box{display:flex;flex-direction:column;gap:10px;padding:16px;border-radius:var(--radius);
+  background:linear-gradient(var(--night-2),var(--night-2)) padding-box,linear-gradient(90deg,var(--pink),var(--orange),var(--cyan)) border-box;border:2px solid transparent;
+  box-shadow:0 10px 40px rgba(255,46,136,.25)}
+.ca-label{font-family:var(--display);font-size:.78rem;letter-spacing:.14em;color:var(--yellow)}
+.ca-row{display:flex;gap:10px;align-items:stretch}
+.ca-addr{flex:1;min-width:0;display:flex;align-items:center;padding:10px 14px;border-radius:12px;background:#07031a;border:1px solid #ffffff14;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.82rem;color:var(--cyan);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.copy{flex:none;min-width:96px;padding:0 18px;border-radius:12px;font-family:var(--display);font-size:.9rem;background:var(--pink);color:#fff;
+  box-shadow:0 0 16px rgba(255,46,136,.6);transition:background .2s,box-shadow .2s,transform .15s}
+.copy:hover{transform:translateY(-1px)}
+.copy.ok{background:#14c98a;box-shadow:0 0 18px rgba(20,201,138,.8)}
+
+/* ---------- Car divider ---------- */
+.road{position:relative;height:70px;margin-top:48px;overflow:hidden;border-bottom:2px solid rgba(255,46,136,.5);
+  background:linear-gradient(180deg,transparent 60%,rgba(255,46,136,.08))}
+.road::after{content:"";position:absolute;left:0;right:0;bottom:12px;height:3px;background:repeating-linear-gradient(90deg,var(--yellow) 0 30px,transparent 30px 60px);opacity:.6;animation:lane 0.6s linear infinite}
+@keyframes lane{to{background-position:-60px 0}}
+.car{position:absolute;bottom:14px;width:190px;color:#1b0b3a;animation:drive 9s linear infinite}
+.car svg{width:100%;height:auto;filter:drop-shadow(0 0 6px rgba(0,229,255,.55))}
+@keyframes drive{from{left:-220px}to{left:100%}}
+
+/* ---------- Story / briefing ---------- */
+.cards{display:grid;gap:18px;margin-top:36px}
+.brief{position:relative;padding:26px 22px 22px;border-radius:var(--radius);background:linear-gradient(160deg,#1f0f4a,#120830);border:1px solid rgba(123,47,247,.5);overflow:hidden}
+.brief::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent 0 22px,rgba(255,255,255,.015) 22px 44px);pointer-events:none}
+.brief .file{display:flex;justify-content:space-between;align-items:center;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.74rem;color:var(--muted);
+  border-bottom:1px dashed #ffffff26;padding-bottom:10px;margin-bottom:14px;letter-spacing:.06em}
+.stamp{font-family:var(--display);font-size:.7rem;color:var(--pink);border:2px solid var(--pink);padding:2px 8px;border-radius:4px;transform:rotate(-6deg);
+  text-shadow:0 0 6px rgba(255,46,136,.7);box-shadow:0 0 8px rgba(255,46,136,.4)}
+.brief h3{font-family:var(--display);font-weight:400;font-size:1.25rem;color:var(--yellow);text-shadow:0 0 12px rgba(255,212,0,.45);margin-bottom:8px}
+.brief p{color:#dccff7;font-size:.97rem}
+.brief .redact{background:#000;color:#000;border-radius:2px;padding:0 4px;user-select:none}
+
+/* ---------- How to buy ---------- */
+.missions{display:grid;gap:16px;margin-top:36px;counter-reset:m}
+.mission{position:relative;display:flex;gap:16px;align-items:flex-start;padding:20px;border-radius:var(--radius);background:rgba(20,10,51,.85);
+  border:1px solid rgba(0,229,255,.28);transition:border-color .25s,box-shadow .25s,transform .25s}
+.mission:hover{border-color:var(--cyan);box-shadow:0 0 26px rgba(0,229,255,.3);transform:translateY(-3px)}
+.mission .num{flex:none;width:58px;height:58px;display:grid;place-items:center;border-radius:14px;font-family:var(--display);font-size:1.5rem;color:#0B0620;
+  background:linear-gradient(135deg,var(--cyan),var(--purple));box-shadow:0 0 18px rgba(0,229,255,.5)}
+.mission small{display:block;font-family:var(--display);font-size:.7rem;letter-spacing:.16em;color:var(--pink)}
+.mission h3{font-family:var(--display);font-weight:400;font-size:1.15rem;margin:2px 0 6px}
+.mission p{color:var(--muted);font-size:.95rem}
+.mission a.inline{color:var(--cyan);font-weight:700;border-bottom:1px solid currentColor}
+.reward{display:inline-block;margin-top:10px;font-size:.75rem;font-weight:700;color:var(--yellow);letter-spacing:.06em}
+
+/* ---------- Tokenomics ---------- */
+.tokens{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:36px}
+.tok{padding:22px 16px;border-radius:var(--radius);text-align:center;background:linear-gradient(180deg,rgba(255,138,0,.12),rgba(123,47,247,.12));
+  border:1px solid rgba(255,138,0,.35);transition:transform .25s,box-shadow .25s}
+.tok:hover{transform:translateY(-4px);box-shadow:0 0 28px rgba(255,138,0,.35)}
+.tok .ico{width:52px;height:52px;margin:0 auto 12px;display:grid;place-items:center;border-radius:50%;background:rgba(255,212,0,.12);color:var(--yellow);box-shadow:0 0 16px rgba(255,212,0,.3)}
+.tok .ico svg{width:26px;height:26px}
+.tok h3{font-family:var(--display);font-weight:400;font-size:1rem;line-height:1.2;color:#fff;margin-bottom:6px}
+.tok p{font-size:.85rem;color:var(--muted)}
+
+/* ---------- Gallery ---------- */
+.gallery{display:grid;grid-template-columns:1fr;gap:16px;margin-top:36px}
+.shot{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:1;background:var(--night-3);border:2px solid rgba(255,46,136,.35);
+  transition:box-shadow .35s,border-color .35s}
+.shot img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.2,1),filter .4s}
+.shot figcaption{position:absolute;left:12px;bottom:12px;padding:4px 12px;border-radius:999px;background:rgba(11,6,32,.75);font-family:var(--display);font-size:.72rem;letter-spacing:.1em;color:var(--cyan)}
+.shot:hover{border-color:var(--pink);box-shadow:0 0 30px rgba(255,46,136,.6),0 0 60px rgba(123,47,247,.4)}
+.shot:hover img{transform:scale(1.08);filter:saturate(1.2) contrast(1.05)}
+
+/* ---------- Roadmap ---------- */
+.plan{position:relative;display:grid;gap:22px;margin-top:40px;padding-left:28px}
+.plan::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:3px;border-radius:3px;background:linear-gradient(var(--pink),var(--orange),var(--cyan));box-shadow:0 0 12px rgba(255,46,136,.6)}
+.phase{position:relative;padding:22px;border-radius:var(--radius);background:rgba(20,10,51,.9);border:1px solid rgba(255,46,136,.3)}
+.phase::before{content:"";position:absolute;left:-27px;top:26px;width:17px;height:17px;border-radius:50%;background:var(--night);border:3px solid var(--pink);box-shadow:0 0 12px var(--pink)}
+.phase.active::before{background:var(--pink)}
+.phase small{font-family:var(--display);font-size:.72rem;letter-spacing:.16em;color:var(--orange)}
+.phase h3{font-family:var(--display);font-weight:400;font-size:1.4rem;margin:4px 0 4px;color:#fff;text-shadow:0 0 12px rgba(255,46,136,.6)}
+.phase .codename{font-size:.85rem;color:var(--muted);font-style:italic;margin-bottom:12px}
+.phase ul{list-style:none;display:grid;gap:8px}
+.phase li{position:relative;padding-left:26px;font-size:.95rem;color:#e6dbff}
+.phase li::before{content:"";position:absolute;left:0;top:4px;width:16px;height:16px;border-radius:4px;border:2px solid var(--cyan)}
+.phase li.done::before{background:var(--cyan) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3 3 7-7' fill='none' stroke='%230B0620' stroke-width='2.5'/%3E%3C/svg%3E") center/12px no-repeat;box-shadow:0 0 8px var(--cyan)}
+
+/* ---------- Join banner ---------- */
+.join{text-align:center;padding:64px 0}
+.join-box{padding:40px 20px;border-radius:24px;background:radial-gradient(ellipse at top,rgba(255,46,136,.35),transparent 60%),linear-gradient(180deg,#2a0b55,#140a33);
+  border:1px solid rgba(255,46,136,.4);box-shadow:0 0 60px rgba(123,47,247,.35)}
+.join-box .cta{margin:24px auto 0}
+
+/* ---------- Footer ---------- */
+footer{padding:48px 0 calc(40px + env(safe-area-inset-bottom));border-top:1px solid #ffffff14;background:#07031a;text-align:center}
+.socials{display:flex;justify-content:center;gap:14px;margin:20px 0}
+.socials a{width:52px;height:52px;display:grid;place-items:center;border-radius:50%;border:2px solid var(--pink);color:#fff;transition:box-shadow .25s,background .25s,transform .25s}
+.socials a:hover{background:var(--pink);box-shadow:0 0 22px var(--pink);transform:translateY(-3px)}
+.socials svg{width:22px;height:22px}
+.disclaimer{max-width:640px;margin:0 auto;font-size:.82rem;color:#8f80b8;line-height:1.6}
+.copyright{margin-top:16px;font-size:.75rem;color:#6d5e96}
+
+/* ---------- Reveal ---------- */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.from-left{transform:translateX(-40px)}
+.reveal.from-right{transform:translateX(40px)}
+.reveal.in{opacity:1;transform:none}
+.no-js .reveal{opacity:1;transform:none}
+
+/* ---------- Breakpoints ---------- */
+@media (min-width:560px){
+  .cta{flex-direction:row;max-width:none;justify-content:center}
+  .ca-box{flex-direction:row;align-items:center;padding:14px 18px}
+  .ca-label{flex:none}
+  .ca-row{flex:1}
+  .gallery{grid-template-columns:1fr 1fr}
+  .gallery .shot:first-child{grid-column:span 2;aspect-ratio:2/1}
+}
+@media (min-width:860px){
+  section{padding:110px 0}
+  .nav-links{display:flex}
+  .hero-inner{flex-direction:row;text-align:left;justify-content:space-between;align-items:center;gap:40px;padding-bottom:26vh}
+  .hero-copy{flex:1;display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+  .cta{justify-content:flex-start}
+  .mascot{width:400px;order:2}
+  .palm.r2{display:block;right:120px;width:150px;height:300px;transform:scaleX(-1);animation:sway-r 8.5s ease-in-out infinite -3s;transform-origin:bottom center}
+  .cards{grid-template-columns:repeat(3,1fr)}
+  .missions{grid-template-columns:1fr 1fr}
+  .tokens{grid-template-columns:repeat(4,1fr)}
+  .gallery{grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr}
+  .gallery .shot:first-child{grid-column:auto;grid-row:span 2;aspect-ratio:auto}
+  .plan{grid-template-columns:repeat(3,1fr);padding-left:0;padding-top:30px}
+  .plan::before{left:6px;right:6px;top:0;bottom:auto;width:auto;height:3px;background:linear-gradient(90deg,var(--pink),var(--orange),var(--cyan))}
+  .phase::before{left:22px;top:-38px}
+  .join-box{padding:60px 40px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body class="no-js">
+
+<!-- Reusable SVG shapes -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="palm" viewBox="0 0 200 400">
+    <path fill="currentColor" d="M90 400 Q97 250 103 112 L113 112 Q110 250 108 400 Z"/>
+    <path fill="currentColor" d="M108 110 Q60 76 6 120 Q60 92 106 118 Z"/>
+    <path fill="currentColor" d="M108 110 Q152 68 198 112 Q150 90 110 118 Z"/>
+    <path fill="currentColor" d="M108 110 Q78 46 24 36 Q84 66 104 116 Z"/>
+    <path fill="currentColor" d="M108 110 Q142 36 190 42 Q136 66 112 116 Z"/>
+    <path fill="currentColor" d="M108 110 Q104 46 116 4 Q120 58 112 112 Z"/>
+    <path fill="currentColor" d="M108 110 Q48 108 14 178 Q58 124 106 116 Z"/>
+    <path fill="currentColor" d="M108 110 Q168 112 194 182 Q150 126 110 116 Z"/>
+    <circle fill="currentColor" cx="104" cy="118" r="6"/><circle fill="currentColor" cx="114" cy="120" r="5"/>
+  </symbol>
+</svg>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="brand"><img src="images/favicon.png" alt="" width="38" height="38"><span data-name>Sunset Queen</span></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#story">Story</a><a href="#buy">How to Buy</a><a href="#tokenomics">Tokenomics</a><a href="#gallery">Gallery</a><a href="#roadmap">Roadmap</a>
+    </nav>
+    <a class="btn btn-primary" data-link="buy" href="#" target="_blank" rel="noopener">Buy <span data-ticker>$QUEEN</span></a>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="stars"></div>
+  <div class="sun"></div>
+  <div class="skyline" aria-hidden="true">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path fill="currentColor" d="M0 120V84h40V60h26v24h22V40h34v44h18V70h30V30h12V18h14v12h12v54h26V56h40v28h20V64h22v20h30V24h40v60h18V48h30v36h24V72h40V36h16V20h18v16h14v48h26V58h34v26h22V44h38v40h20V66h28v18h30V28h34v56h22V54h30v30h26V40h12V26h16v14h14v44h30V62h36v22h24V50h34v34h40V70h28v14h30V44h36v40h26v36z"/></svg>
+  </div>
+  <div class="palm l1" aria-hidden="true"><svg><use href="#palm"/></svg></div>
+  <div class="palm l2" aria-hidden="true"><svg><use href="#palm"/></svg></div>
+  <div class="palm r1" aria-hidden="true"><svg><use href="#palm"/></svg></div>
+  <div class="palm r2" aria-hidden="true"><svg><use href="#palm"/></svg></div>
+  <div class="grid" aria-hidden="true"></div>
+
+  <div class="wrap hero-inner">
+    <div class="mascot">
+      <picture>
+        <source srcset="images/logo.webp" type="image/webp">
+        <img src="images/logo.png" alt="Sunset Queen mascot wearing a golden crown and heart sunglasses" width="720" height="720" fetchpriority="high">
+      </picture>
+    </div>
+    <div class="hero-copy">
+      <span class="badge-chain"><i></i> Live on Robinhood Chain</span>
+      <h1 class="title" data-name>Sunset Queen</h1>
+      <div class="ticker" data-ticker>$QUEEN</div>
+      <p class="slogan">The neon coast has a new ruler. Grab your shades, start the engine, and ride with the crew.</p>
+      <div class="cta">
+        <a class="btn btn-primary" data-link="buy" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          Buy <span data-ticker>$QUEEN</span>
+        </a>
+        <a class="btn btn-ghost" data-link="telegram" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3l-3.2 15.1c-.2 1.1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.2 13 1.4 11.5c-1-.3-1.1-1 .2-1.5L20.6 2.8c.9-.3 1.6.2 1.3 1.5z"/></svg>
+          Join the Crew
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTRACT -->
+<section class="ca">
+  <div class="wrap">
+    <div class="ca-box reveal">
+      <span class="ca-label">Contract</span>
+      <div class="ca-row">
+        <code class="ca-addr" id="ca">0x0000000000000000000000000000000000000000</code>
+        <button class="copy" id="copy" type="button" aria-live="polite">Copy</button>
+      </div>
+    </div>
+  </div>
+  <div class="road" aria-hidden="true">
+    <div class="car">
+      <svg viewBox="0 0 300 80">
+        <path fill="currentColor" stroke="#00E5FF" stroke-width="2" d="M8 62 L14 50 L70 42 L112 24 L176 22 L214 38 L276 44 L292 54 L292 64 L8 64 Z"/>
+        <path fill="#FF2E88" opacity=".55" d="M120 30 L170 28 L198 40 L106 42 Z"/>
+        <rect x="284" y="48" width="8" height="6" rx="2" fill="#FFD400"/>
+        <rect x="8" y="52" width="10" height="5" rx="2" fill="#FF2E88"/>
+        <circle cx="70" cy="64" r="13" fill="#0B0620" stroke="#00E5FF" stroke-width="3"/>
+        <circle cx="232" cy="64" r="13" fill="#0B0620" stroke="#00E5FF" stroke-width="3"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section id="story">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="kicker">// Mission Briefing</span>
+      <h2 class="h2">The Story</h2>
+      <p class="lead">Three case files. One queen. A whole coastline that never sleeps.</p>
+    </div>
+    <div class="cards">
+      <article class="brief reveal">
+        <div class="file"><span>CASE FILE #001</span><span class="stamp">Classified</span></div>
+        <h3>The Arrival</h3>
+        <p>One summer night a white convertible rolled down the boulevard with the radio blasting synth. Behind the wheel: a stranger in heart-shaped shades and a crown made of <span class="redact">██████</span> gold. Nobody knew her name. Everybody remembered her style.</p>
+      </article>
+      <article class="brief reveal">
+        <div class="file"><span>CASE FILE #002</span><span class="stamp">Eyes Only</span></div>
+        <h3>The Takeover</h3>
+        <p>She didn't need a gang. She built a crew — artists, meme lords, night drivers and degens who just wanted to have fun. Every neon sign on the strip started flickering her colors. The coast had a new queen.</p>
+      </article>
+      <article class="brief reveal">
+        <div class="file"><span>CASE FILE #003</span><span class="stamp">Active</span></div>
+        <h3>The Job</h3>
+        <p>Now the crew is heading to Robinhood Chain for the biggest party the coast has ever seen. The plan is simple: make memes, recruit friends, and paint the whole chain sunset pink. You in?</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO BUY -->
+<section id="buy">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="kicker">// New Objective</span>
+      <h2 class="h2">How to Buy</h2>
+      <p class="lead">Four missions between you and the crew. No cutscenes, no skips.</p>
+    </div>
+    <div class="missions">
+      <div class="mission reveal from-left">
+        <div class="num">01</div>
+        <div><small>Mission 01</small><h3>Get MetaMask</h3>
+          <p>Download <a class="inline" href="https://metamask.io/download/" target="_blank" rel="noopener">MetaMask</a> (app or browser extension) and create your wallet. Keep your secret phrase offline — never share it with anyone.</p>
+          <span class="reward">★ Reward: your getaway wallet</span></div>
+      </div>
+      <div class="mission reveal from-right">
+        <div class="num">02</div>
+        <div><small>Mission 02</small><h3>Get ETH on Robinhood Chain</h3>
+          <p>Add Robinhood Chain to MetaMask and load up some ETH for gas and swaps. Bridge it over or send it from an exchange that supports the network.</p>
+          <span class="reward">★ Reward: fuel in the tank</span></div>
+      </div>
+      <div class="mission reveal from-left">
+        <div class="num">03</div>
+        <div><small>Mission 03</small><h3>Go to Pons</h3>
+          <p>Open the <a class="inline" data-link="buy" href="#" target="_blank" rel="noopener"><span data-ticker>$QUEEN</span> page on Pons</a> and connect your wallet. Double-check the contract address matches the one above.</p>
+          <span class="reward">★ Reward: you found the hideout</span></div>
+      </div>
+      <div class="mission reveal from-right">
+        <div class="num">04</div>
+        <div><small>Mission 04</small><h3>Swap for <span data-ticker>$QUEEN</span></h3>
+          <p>Choose how much ETH you want to swap, confirm in MetaMask, and welcome to the crew. Now go post your shades in the Telegram.</p>
+          <span class="reward">★ Reward: crew membership unlocked</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOKENOMICS -->
+<section id="tokenomics">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="kicker">// The Split</span>
+      <h2 class="h2">Tokenomics</h2>
+      <p class="lead">No insiders, no back rooms. Everyone gets in through the same door.</p>
+    </div>
+    <div class="tokens">
+      <div class="tok reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></div>
+        <h3>Fixed Supply</h3><p>Supply set at launch. No extra minting.</p>
+      </div>
+      <div class="tok reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7h14M5 7l-3 7a4 4 0 0 0 6 0L5 7zM19 7l-3 7a4 4 0 0 0 6 0l-3-7z"/></svg></div>
+        <h3>Fair Launch</h3><p>Same rules, same curve, same start line for everyone.</p>
+      </div>
+      <div class="tok reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></div>
+        <h3>No Presale</h3><p>No VIP list, no private round. Zero.</p>
+      </div>
+      <div class="tok reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+        <h3>Liquidity Locked</h3><p>Liquidity gets locked after graduation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="kicker">// Surveillance Photos</span>
+      <h2 class="h2">The Gallery</h2>
+      <p class="lead">Spotted on the strip. Make your own and tag the crew.</p>
+    </div>
+    <div class="gallery">
+      <figure class="shot reveal"><img src="images/banner.jpg" alt="The queen leaning on a white convertible at sunset" loading="lazy" decoding="async" width="1000" height="1000"><figcaption>Sunset Patrol</figcaption></figure>
+      <figure class="shot reveal"><img src="images/crew-2.jpg" alt="The queen in front of a synthwave sun and neon grid" loading="lazy" decoding="async" width="1000" height="1000"><figcaption>Neon Royalty</figcaption></figure>
+      <figure class="shot reveal"><img src="images/crew-1.jpg" alt="A crew member leaning on a car by the beach at dusk" loading="lazy" decoding="async" width="1000" height="1000"><figcaption>The Crew</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="kicker">// The Heist Plan</span>
+      <h2 class="h2">Roadmap</h2>
+      <p class="lead">Every great job needs a plan. Here's ours.</p>
+    </div>
+    <div class="plan">
+      <div class="phase active reveal">
+        <small>Phase 1</small><h3>Launch</h3><p class="codename">Codename: "Ignition"</p>
+        <ul>
+          <li class="done">Deploy <span data-ticker>$QUEEN</span> on Pons</li>
+          <li class="done">Website, X and Telegram go live</li>
+          <li>First wave of crew members</li>
+          <li>Meme kit for the community</li>
+        </ul>
+      </div>
+      <div class="phase reveal">
+        <small>Phase 2</small><h3>Community</h3><p class="codename">Codename: "Night Shift"</p>
+        <ul>
+          <li>Meme &amp; art contests</li>
+          <li>X raids and Spaces with the crew</li>
+          <li>Community-made stickers &amp; wallpapers</li>
+          <li>Crew roles and holder shoutouts</li>
+        </ul>
+      </div>
+      <div class="phase reveal">
+        <small>Phase 3</small><h3>Graduation</h3><p class="codename">Codename: "Grand Finale"</p>
+        <ul>
+          <li>Complete the Pons bonding curve</li>
+          <li>Liquidity locked after graduation</li>
+          <li>Chart trackers &amp; community listings</li>
+          <li>Biggest sunset party on the chain</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN -->
+<section class="join">
+  <div class="wrap">
+    <div class="join-box reveal">
+      <span class="kicker">// Last Call</span>
+      <h2 class="h2">Ride With the Crew</h2>
+      <p class="lead" style="margin-left:auto;margin-right:auto">The engine is running and the sun is going down. Hop in.</p>
+      <div class="cta" style="justify-content:center">
+        <a class="btn btn-primary" data-link="buy" href="#" target="_blank" rel="noopener">Buy <span data-ticker>$QUEEN</span></a>
+        <a class="btn btn-ghost" data-link="telegram" href="#" target="_blank" rel="noopener">Join the Crew</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="#top" class="brand" style="justify-content:center"><img src="images/favicon.png" alt="" width="38" height="38" loading="lazy"><span data-name>Sunset Queen</span></a>
+    <div class="socials">
+      <a data-link="x" href="#" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.2 2.3h3.4l-7.4 8.5 8.7 11.5h-6.8l-5.3-7-6.1 7H1.3l7.9-9L.9 2.3h7l4.8 6.4 5.5-6.4zm-1.2 18h1.9L7 4.2H5L17 20.3z"/></svg></a>
+      <a data-link="telegram" href="#" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3l-3.2 15.1c-.2 1.1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.2 13 1.4 11.5c-1-.3-1.1-1 .2-1.5L20.6 2.8c.9-.3 1.6.2 1.3 1.5z"/></svg></a>
+    </div>
+    <p class="disclaimer"><span data-ticker>$QUEEN</span> is a memecoin with no intrinsic value or expectation of financial return. Not financial advice. Only spend what you can afford to lose.</p>
+    <p class="copyright">© <span id="year">2026</span> <span data-name>Sunset Queen</span> · Made by the crew, for the crew.</p>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   EDIT YOUR COIN DATA HERE
+   ============================================================ */
+const CONFIG = {
+  name:     "Sunset Queen",
+  ticker:   "$QUEEN",
+  contract: "0x0000000000000000000000000000000000000000",
+  links: {
+    buy:      "#",   // your coin page on Pons
+    x:        "#",   // https://x.com/yourhandle
+    telegram: "#"    // https://t.me/yourgroup
+  }
+};
+
+document.body.classList.remove("no-js");
+
+// Fill in name, ticker, contract and links
+document.querySelectorAll("[data-name]").forEach(el => el.textContent = CONFIG.name);
+document.querySelectorAll("[data-ticker]").forEach(el => el.textContent = CONFIG.ticker);
+document.querySelectorAll("[data-link]").forEach(el => el.href = CONFIG.links[el.dataset.link] || "#");
+document.getElementById("ca").textContent = CONFIG.contract;
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Copy contract
+const copyBtn = document.getElementById("copy");
+copyBtn.addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(CONFIG.contract);
+  } catch {
+    const t = document.createElement("textarea");
+    t.value = CONFIG.contract; t.setAttribute("readonly", ""); t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select(); document.execCommand("copy"); t.remove();
+  }
+  copyBtn.textContent = "Copied!";
+  copyBtn.classList.add("ok");
+  clearTimeout(copyBtn._t);
+  copyBtn._t = setTimeout(() => { copyBtn.textContent = "Copy"; copyBtn.classList.remove("ok"); }, 1800);
+});
+
+// Nav background on scroll
+const nav = document.getElementById("nav");
+const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 20);
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll();
+
+// Reveal on scroll
+const items = document.querySelectorAll(".reveal");
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const siblings = [...e.target.parentElement.children].filter(c => c.classList.contains("reveal"));
+      e.target.style.transitionDelay = Math.min(siblings.indexOf(e.target), 4) * 90 + "ms";
+      e.target.classList.add("in");
+      // once revealed, drop the reveal classes so hover transitions work normally
+      e.target.addEventListener("transitionend", () => {
+        e.target.classList.remove("reveal", "in", "from-left", "from-right");
+        e.target.style.transitionDelay = "";
+      }, { once: true });
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+  items.forEach(el => io.observe(el));
+} else {
+  items.forEach(el => el.classList.add("in"));
+}
+</script>
+</body>
+</html>
