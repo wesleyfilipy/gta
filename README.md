@@ -1,4 +1,4 @@
-# Sunset Queen ($QUEEN)
+# Sunset Queen ($GT6QUEEN)
 
 Memecoin landing page — single static `index.html` (no build step).
 
